@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: pedido-service
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 1000
+            readTimeout: 10000
+          cliente-service:
+            connectTimeout: 1000
+            readTimeout: 3500
+          producto-service:
+            connectTimeout: 1000
+            readTimeout: 12000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    circuitBreakerAspectOrder: 2
+    instances:
+      productoService:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        slowCallDurationThreshold: 8s
+        slowCallRateThreshold: 50
+        waitDurationInOpenState: 15s
+  retry:
+    retryAspectOrder: 3
+    instances:
+      clienteRetry:
+        maxAttempts: 3
+        waitDuration: 2s
+  bulkhead:
+    bulkheadAspectOrder: 1
+    instances:
+      productoBulkhead:
+        maxConcurrentCalls: 2
+        maxWaitDuration: 1s
