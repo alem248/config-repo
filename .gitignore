@@ -1,0 +1,14 @@
+target/
+**/target/
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+*.log
+*.pid
+.env
+Thumbs.db
+_guide_extracted.tmp
+_guide_render/
