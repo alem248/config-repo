@@ -74,6 +74,8 @@ mvn spring-boot:run
 
 Antes de iniciar los servicios, consulta Config Server y Eureka en el navegador:
 
+- `http://localhost:8888/categoria-service/default`
+- `http://localhost:8888/producto-service/default`
 - `http://localhost:8888/categoria-service/dev`
 - `http://localhost:8888/cliente-service/prod`
 - `http://localhost:8761`

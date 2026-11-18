@@ -4,7 +4,7 @@
 
 1. Confirma que Config Server puede leer los archivos de `config-repo` desde `https://github.com/alem248/config-repo.git` y que la rama remota es `main`.
 2. Abre seis consolas de PowerShell y ejecuta los módulos en el orden indicado en el README: Config Server, Eureka, categoría, producto, cliente y pedido.
-3. En el navegador consulta `/categoria-service/dev`, `/categoria-service/prod`, `/producto-service/dev`, `/producto-service/prod`, y los perfiles de cliente y pedido. Captura el JSON de Config Server mostrando `server.port` y la URL H2 o MySQL para probar que cada perfil se resolvió.
+3. En el navegador consulta primero `/categoria-service/default` y `/producto-service/default`, como en la guía. Luego consulta `/categoria-service/dev`, `/categoria-service/prod`, `/producto-service/dev`, `/producto-service/prod`, y los perfiles de cliente y pedido. Captura el JSON de Config Server mostrando `server.port` y la URL H2 o MySQL para probar que cada perfil se resolvió.
 4. Abre `http://localhost:8761` y captura Eureka con las cuatro aplicaciones registradas en estado `UP`.
 
 ## Evidencia 1: comportamiento normal
