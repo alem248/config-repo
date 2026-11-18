@@ -13,7 +13,7 @@ Proyecto Maven multimódulo para practicar configuración centralizada, perfiles
 | `cliente-service` | 8084 | 9094 | Clientes, pedidos consultados por cliente y latencia de 5 s. |
 | `pedido-service` | 8085 | 9095 | Agrega cliente y producto; implementa Retry, Bulkhead y Circuit Breaker. |
 
-Las configuraciones fuente para Config Server están en [`config-repo`](config-repo). Si el repositorio remoto aún no tiene esos archivos, publícalos en su rama `main` antes de iniciar las aplicaciones. Config Server apunta a la URL requerida y puede recibir otra URL mediante `CONFIG_REPO_URI`.
+Las configuraciones fuente para Config Server están en [`config-repo`](config-repo) y también en la raíz del repositorio, que es donde Config Server las busca. Config Server apunta a la URL requerida y puede recibir otra URL mediante `CONFIG_REPO_URI`.
 
 ## Requisitos
 
