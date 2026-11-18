@@ -1,0 +1,15 @@
+server:
+  port: 9092
+
+spring:
+  datasource:
+    url: ${CATEGORIA_DB_URL:jdbc:mysql://localhost:3306/bd_categoria_prod}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      mode: never
