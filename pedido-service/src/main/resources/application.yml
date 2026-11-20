@@ -61,7 +61,6 @@ resilience4j:
         maxAttempts: 3
         waitDuration: 2s
   bulkhead:
-    bulkheadAspectOrder: 1
     instances:
       productoBulkhead:
         maxConcurrentCalls: 2
